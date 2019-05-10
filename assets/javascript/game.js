@@ -1,61 +1,70 @@
+
+//Variables
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var winCount = 0
 var lossCount = 0
 var guessesLeft = 0
 var guessedLetters = []
-var defaultGuessesLeft = 9;
+var defaultGuessesLeft = 7;
 
-window.addEventListener("keypress", onKeyPress, false);
-newGame();
+//press a button and game starts 
+document.onkeyup=function(event){
 
+  newGame();oneKeyPress
+  generatesRndomLeter();oneKeyPress
+  keyPressed();oneKeyPress
+  resetGuesses();resetGuesses
+
+}
+
+//Game starts
 function newGame() {
   resetGuesses();
   generateRandomLetter();
   console.log(randomLetter); 
-  displayOnScreen("wins", `Wins: ${String(winCount)}`);
-  displayOnScreen("losses", `Losses: ${String(lossCount)}`);
-  displayOnScreen("guessesleft", `Guesses Left: ${String(guessesLeft)}`);
+  displayOnScreen("wins", `Wins: (document.git elementId wins`);
+  displayOnScreen("losses", `Losses: (document.git elementId LoosesCount`);
+  displayOnScreen("guessesleft", `Guesses Left: String(guessesLeft)}`);
 }
 
-function onKeyPress(key) {
+//loop throught the array until guessed letter
+for (var i = 0; i < randomLetter.length; i++) {
+  console.log(letter[i]);
+}
+console.log();
+
+function onKeyPress() {
   if (letters.includes(letter, 0) && guessedLetters.includes(letter, 0) === false) {
-    guessedLetters.push(letter);
-    printKeyPressed(letter);
     guessesLeft--;
-    displayOnScreen("guessesleft", `Guesses Left: ${String(guessesLeft)}`);
+   
     if (String(letter) == String(randomLetter)) {
       winCount++;
-      displayOnScreen("wins", `Wins: ${String(winCount)}`);
       newGame();
     }
     if (guessesLeft === 0) {
       lossCount++;
-      displayOnScreen("losses", `Losses: ${String(lossCount)}`);
       newGame();
     }
   }
 
-
 }
 
+//computer generates another random letter
 function generateRandomLetter() {
   randomLetter = letters[Math.floor(Math.random() * letters.length)];
 }
 
-function printKeyPressed(letter) {
+//number of guesses left
+function keyPressed(letter) {
   if (guessesLeft == 7) {
-    document.getElementById("guessessofar").innerHTML += letter;
+    document.getElementById("guessessofar") += letter;
   } else {
-    document.getElementById("guessessofar").innerHTML += ", " + letter;
+    document.getElementById("guessessofar").letter;
   }
 }
 
+//reset number of guesses
 function resetGuesses() {
   guessesLeft = defaultGuessesLeft;
-  displayOnScreen("guessesleft", `Losses: ${String(guessesLeft)}`);
-  displayOnScreen("guessessofar", `Your Guesses so far: `);
-}
-
-function displayOnScreen(divContainer, content) {
-  document.getElementById(divContainer).innerHTML = content;
+  resetGuesses();
 }

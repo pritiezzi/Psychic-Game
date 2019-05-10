@@ -1,12 +1,36 @@
+body {
+  background-color: darkslateblue;
+
+}
 
   h1 {
-    width: 90%;
+    width: 72%;
     padding: 10px;
     margin: 10px;
-    color: red;
+    color: palevioletred;
     text-align: center;
     background:black;
 
   }
-  
-  
+
+  h2 {background-color: black;
+    color:palevioletred;
+    width: 72%;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  p {color: black;
+    font-style: bold;
+    width: 40%;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+img {float: right;
+  width:25%; 
+  padding: 5px;
+}
+
+
