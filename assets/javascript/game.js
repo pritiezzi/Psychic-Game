@@ -1,70 +1,54 @@
+var wins = 0;
+var losses = 0;
+var guessesLeft = 9;
+// array for user's guesses
+var guessedLetters = [];
+var userGuess = null;
+///Letter choices available
+var alphabetChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+console.log('key'); 
 
-//Variables
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var winCount = 0
-var lossCount = 0
-var guessesLeft = 0
-var guessedLetters = []
-var defaultGuessesLeft = 7;
+// var wins = 0;
+// var losses = 0;
+// var guessesLeft = 9;
+// // array for user's guesses
+// var guessedLetters = [];
+// var userGuess = "null";
+// ///Letter choices available
+// var alphabetChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// console.log('key');
+//     console.log('event.key: ', event.key);
+// document.onkeyup = function(event) {
+  
+//     var userGuess = event.key;
+//     document.getElementById("guesses-made").innerHTML =  event.key;
 
-//press a button and game starts 
-document.onkeyup=function(event){
+//      indexOf locates values in an array
+//     if (guessedLetters.indexOf(userGuess) < 0 && alphabetChoices.indexOf(userGuess) >= 0) {
+//         console.log('inside first if/else');
+//         guessedLetters[guessedLetters.length] = userGuess;
+//         guessesLeft--;
+//         document.getElementById("guesses-made").innerHTML += event.key;
+//     }
 
-  newGame();oneKeyPress
-  generatesRndomLeter();oneKeyPress
-  keyPressed();oneKeyPress
-  resetGuesses();resetGuesses
+//      // == checks if a value is equal to another value
+//     if (computerGuess == guessedLetters) {
+//         console.log('inside second');
 
-}
+//         wins++;
+//         document.getElementById("losses").innerHTML += event.key;
+//         console.log("Wins: " + wins + " Losses: " + losses + " Guesses Made: " + guesses-made + " guessedLetters " + guessedLetters);
 
-//Game starts
-function newGame() {
-  resetGuesses();
-  generateRandomLetter();
-  console.log(randomLetter); 
-  displayOnScreen("wins", `Wins: (document.git elementId wins`);
-  displayOnScreen("losses", `Losses: (document.git elementId LoosesCount`);
-  displayOnScreen("guessesleft", `Guesses Left: String(guessesLeft)}`);
-}
+    
+//     if (guessesLeft == 0) {
 
-//loop throught the array until guessed letter
-for (var i = 0; i < randomLetter.length; i++) {
-  console.log(letter[i]);
-}
-console.log();
+//         console.log('inside third');
 
-function onKeyPress() {
-  if (letters.includes(letter, 0) && guessedLetters.includes(letter, 0) === false) {
-    guessesLeft--;
-   
-    if (String(letter) == String(randomLetter)) {
-      winCount++;
-      newGame();
-    }
-    if (guessesLeft === 0) {
-      lossCount++;
-      newGame();
-    }
-  }
-
-}
-
-//computer generates another random letter
-function generateRandomLetter() {
-  randomLetter = letters[Math.floor(Math.random() * letters.length)];
-}
-
-//number of guesses left
-function keyPressed(letter) {
-  if (guessesLeft == 7) {
-    document.getElementById("guessessofar") += letter;
-  } else {
-    document.getElementById("guessessofar").letter;
-  }
-}
-
-//reset number of guesses
-function resetGuesses() {
-  guessesLeft = defaultGuessesLeft;
-  resetGuesses();
-}
+//         losses++;
+//         guessesLeft = 9;
+//         guessedLetters = [];
+//         computerGuess = alphabetChoices[Math.floor(Math.random() * (alphabetChoices.length))];
+//         document.getElementById("guesses-left").innerHTML += event.key;
+//         console.log("Wins: " + wins + " Losses: " + losses + " Guesses Made: " + guesses-made + " guessedLetters " + guessedLetters);    
+//      }   
+// };
